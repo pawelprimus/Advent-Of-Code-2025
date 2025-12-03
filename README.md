@@ -1,13 +1,13 @@
 # Advent-Of-Code-2025
 https://adventofcode.com/2025
 
-Exercises made in my fourth advent of code event.
+Exercises made in my fifth advent of code event.
 
 | Day                                        | ONE                                                                                                                     | TWO                                                                                                                     |
 |--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
 | [01](https://adventofcode.com/2025/day/1)  | [:heavy_check_mark:](https://github.com/pawelprimus/Advent-Of-Code-2025/blob/master/src/main/java/DAY_01/DAY_01_1.java) | [:heavy_check_mark:](https://github.com/pawelprimus/Advent-Of-Code-2025/blob/master/src/main/java/DAY_01/DAY_01_2.java) |
 | [02](https://adventofcode.com/2025/day/2)  | [:heavy_check_mark:](https://github.com/pawelprimus/Advent-Of-Code-2025/blob/master/src/main/java/DAY_02/DAY_02_1.java) | [:heavy_check_mark:](https://github.com/pawelprimus/Advent-Of-Code-2025/blob/master/src/main/java/DAY_02/DAY_02_2.java) |
-| [03](https://adventofcode.com/2025/day/3)  | :x:                                                                                                                     | :x:                                                                                                                     |
+| [03](https://adventofcode.com/2025/day/3)  | [:heavy_check_mark:](https://github.com/pawelprimus/Advent-Of-Code-2025/blob/master/src/main/java/DAY_03/DAY_03_1.java) | :x:                                                                                                                     |
 | [04](https://adventofcode.com/2025/day/4)  | :x:                                                                                                                     | :x:                                                                                                                     |
 | [05](https://adventofcode.com/2025/day/5)  | :x:                                                                                                                     | :x:                                                                                                                     |
 | [06](https://adventofcode.com/2025/day/6)  | :x:                                                                                                                     | :x:                                                                                                                     |
