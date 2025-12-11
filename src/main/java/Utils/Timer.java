@@ -10,7 +10,6 @@ public class Timer {
         startTime = System.nanoTime();
     }
 
-
     public static void printEndTime() {
         long endTime = System.nanoTime();
         long totalTime = endTime - startTime;
@@ -18,4 +17,9 @@ public class Timer {
         long seconds = TimeUnit.NANOSECONDS.toSeconds(totalTime);
         System.out.println("SECONDS[" + seconds + "] MILIS[" + millis + "] NANOS [" + totalTime + "]");
     }
+    public static long getExecutionTimeNanos() {
+        long endTime = System.nanoTime();
+        return endTime - startTime;
+    }
+
 }
