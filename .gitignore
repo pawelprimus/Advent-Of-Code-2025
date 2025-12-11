@@ -40,3 +40,6 @@ build/
 
 ### input
 **/input.txt
+
+### executions files
+**/DAY_*/DAY_*.txt
