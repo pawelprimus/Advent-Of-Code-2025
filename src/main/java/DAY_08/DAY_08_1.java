@@ -67,14 +67,14 @@ public class DAY_08_1 {
             }
             System.out.println(containsGroup.size());
 
-            if (containsGroup.size() == 1) {
+//            if (containsGroup.size() == 1) {
+//                containsGroup.getFirst().add(minDistancePair);
+//            }
+            if (!containsGroup.isEmpty()) {
                 containsGroup.getFirst().add(minDistancePair);
-            }
-            if (containsGroup.size() > 1) {
-                containsGroup.get(0).add(minDistancePair);
 
                 for (int i = 1; i < containsGroup.size(); i++) {
-                    containsGroup.get(0).mergeGroup(containsGroup.get(i));
+                    containsGroup.getFirst().mergeGroup(containsGroup.get(i));
                     groups.remove(containsGroup.get(i));
                 }
             }
@@ -84,15 +84,9 @@ public class DAY_08_1 {
                 groups.add(new Group(minDistancePair));
             }
 
-//            for (Group group : groups) {
-//                System.out.println(group.getSize());
-//            }
-
             pairs.removeLast();
         }
 
-
-        //  }
 
         groups.sort(Comparator.comparingInt(Group::getSize).reversed());
 
@@ -162,10 +156,6 @@ public class DAY_08_1 {
             points.add(pair.getPoint1());
             points.add(pair.getPoint2());
         }
-
-//        public void add(Point point) {
-//            points.add(point);
-//        }
 
         public void add(Pair pair) {
             if (!points.contains(pair.getPoint1())) {

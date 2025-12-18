@@ -37,11 +37,9 @@ public class DAY_08_2 {
                     pairs.add(new Pair(points.get(i), points.get(j), distance));
                 }
 
-                //System.out.println(points.get(i) + " -> " + points.get(j) + " ==>" + distance);
             }
         }
 
-        System.out.println(pairs.size());
         pairs.sort(Comparator.comparingDouble(Pair::getDistance).reversed());
         List<Group> groups = new ArrayList<>();
 
@@ -49,20 +47,15 @@ public class DAY_08_2 {
 
         while (!pairs.isEmpty()) {
 
-            // for (int index = 0; index < 1000; index++) {
             Pair minDistancePair = pairs.getLast();
-            System.out.println(minDistancePair);
 
             boolean isContain = false;
             boolean isInBoth = false;
-
-            int containsCounter = 0;
 
             List<Group> containsGroup = new ArrayList<>();
             for (Group group : groups) {
 
                 if (group.isContainsBoth(minDistancePair)) {
-                    System.out.println("CONTAINS TO BOTH");
                     isContain = true;
                     isInBoth = true;
                     break;
@@ -74,14 +67,11 @@ public class DAY_08_2 {
 
             }
 
-            if (containsGroup.size() == 1) {
+            if (!containsGroup.isEmpty()) {
                 containsGroup.getFirst().add(minDistancePair);
-            }
-            if (containsGroup.size() > 1) {
-                containsGroup.get(0).add(minDistancePair);
 
                 for (int i = 1; i < containsGroup.size(); i++) {
-                    containsGroup.get(0).mergeGroup(containsGroup.get(i));
+                    containsGroup.getFirst().mergeGroup(containsGroup.get(i));
                     groups.remove(containsGroup.get(i));
                 }
             }
@@ -94,35 +84,15 @@ public class DAY_08_2 {
                 lastPairThatIsNotInBoth = pairs.getLast();
             }
 
-
-//            for (Group group : groups) {
-//                System.out.println(group.getSize());
-//            }
-
             pairs.removeLast();
         }
 
 
-        //  }
-
         groups.sort(Comparator.comparingInt(Group::getSize).reversed());
-
-        for (Group group : groups) {
-            System.out.println(group);
-        }
-
-
-//        for (int i = 0; i < 3; i++) {
-//            result *= groups.get(i).getSize();
-//        }
-
-        System.out.println(groups.size());
-
-        System.out.println("LAST PAIR" + lastPairThatIsNotInBoth);
 
         BigInteger result = BigInteger.valueOf(lastPairThatIsNotInBoth.getPoint1().getX()).multiply(BigInteger.valueOf(lastPairThatIsNotInBoth.getPoint2().getX()));
 
-        System.out.println("RESULT: " + result); // 244188
+        System.out.println("RESULT: " + result);
         Timer.printEndTime();
 
         // Log the result to file
@@ -171,7 +141,7 @@ public class DAY_08_2 {
     }
 
     public static class Group {
-        private List<Point> points;
+        private final List<Point> points;
 
         public Group(Pair pair) {
             points = new ArrayList<>();
@@ -179,9 +149,6 @@ public class DAY_08_2 {
             points.add(pair.getPoint2());
         }
 
-//        public void add(Point point) {
-//            points.add(point);
-//        }
 
         public void add(Pair pair) {
             if (!points.contains(pair.getPoint1())) {
